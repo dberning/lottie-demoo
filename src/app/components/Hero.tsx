@@ -1,6 +1,20 @@
 import Image from "next/image";
 import styled, { keyframes } from 'styled-components'
 
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+// Create a styled div that uses the fade-in animation
+const FadeInDiv = styled.div`
+  animation: ${fadeIn} 2s ease-in;
+`;
+
 const bounce = keyframes`
   0%, 100% {
     transform: translateY(0);
@@ -19,6 +33,7 @@ const Bounce = styled.div`
 
 function Hero () {
   return (
+    <FadeInDiv>
     <div className="container mx-auto h-screen grid grid-cols-12 grid-rows-12">
       <Image        
         src={'/un-mar-logo-2.png'}
@@ -46,6 +61,7 @@ function Hero () {
       </Bounce>
       </div>
     </div>
+    </FadeInDiv>
   )
 }
 

@@ -3,27 +3,39 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: #ffffff;
+  --background-start-rgb: #ffffff;
+  --background-end-rgb: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: #ffffff;
+    --background-start-rgb: #ffffff;
+    --background-end-rgb: #ffffff;
   }
+}
+
+@font-face {
+  font-family: 'BrownRegular';
+  src: url('/Brown-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BrownBold';
+  src: url('/Brown-Bold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  font-family: 'BrownRegular', sans-serif;
 }
 
 @layer utilities {
